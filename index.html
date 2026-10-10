@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Veltrix | Website Development</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#17233c}
+header{background:#101b31;color:white;padding:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.logo{font-size:24px;font-weight:bold}.logo span{color:#50dfc5}
+nav a{color:white;text-decoration:none;margin-left:12px}
+.hero{background:linear-gradient(135deg,#101b31,#244b79);color:white;text-align:center;padding:65px 20px}
+.hero h1{font-size:38px;line-height:1.2}
+.hero p{color:#e1eafa;line-height:1.7}
+.btn{display:inline-block;background:#50dfc5;color:#101b31;text-decoration:none;font-weight:bold;padding:13px 20px;border:0;border-radius:7px;cursor:pointer}
+section{padding:45px 20px}
+.heading{text-align:center;margin-bottom:25px}
+.grid{display:grid;grid-template-columns:1fr;gap:15px;max-width:850px;margin:auto}
+.card{background:white;padding:22px;border-radius:12px;border:1px solid #e3e8f0}
+.muted{color:#58677e}
+#contact{background:#eaf0f8}
+form{background:white;padding:22px;border-radius:12px;max-width:550px;margin:auto}
+label{display:block;margin:14px 0 5px;font-weight:bold}
+input,select,textarea{width:100%;padding:12px;border:1px solid #ccd4e0;border-radius:6px;font:inherit}
+textarea{min-height:90px}
+form button{width:100%;margin-top:18px}
+footer{background:#101b31;color:white;text-align:center;padding:25px}
+@media(min-width:600px){.grid{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">VELTRIX<span>.</span></div>
+<nav><a href="#services">Services</a><a href="#contact">Contact</a></nav>
+</header>
+<main>
+<div class="hero">
+<p>YOUR IDEAS, ONLINE</p>
+<h1>Websites That Help<br>Businesses Grow.</h1>
+<p>Professional websites for shops, cafes and growing businesses.</p>
+<p lang="hi">आपके व्यवसाय के लिए आधुनिक वेबसाइट।</p>
+<a class="btn" href="#contact">Request a Website</a>
+</div>
+<section id="services">
+<div class="heading"><h2>Our Services</h2><p lang="hi">हमारी सेवाएँ</p></div>
+<div class="grid">
+<div class="card"><h3>🏢 Business Websites</h3><p class="muted">Build your professional online presence.</p></div>
+<div class="card"><h3>☕ Cafe Websites</h3><p class="muted">Show your menu and contact details.</p></div>
+<div class="card"><h3>🛍️ Shop Websites</h3><p class="muted">Display products and attract customers.</p></div>
+</div>
+</section>
+<section>
+<div class="heading"><h2>About Veltrix</h2><p lang="hi">वेल्ट्रिक्स के बारे में</p></div>
+<div class="card"><p>Veltrix creates attractive, mobile-friendly websites for businesses.</p><p lang="hi">Veltrix व्यवसायों के लिए आकर्षक वेबसाइट बनाता है।</p></div>
+</section>
+<section id="contact">
+<div class="heading"><h2>Request Your Website</h2><p lang="hi">अपनी वेबसाइट के लिए अनुरोध करें</p></div>
+<form id="requestForm">
+<label for="name">Your name / आपका नाम</label>
+<input id="name" required maxlength="80" placeholder="Your name">
+<label for="business">Business type / व्यवसाय</label>
+<select id="business" required>
+<option value="">Choose one</option>
+<option>Cafe or restaurant</option><option>Shop</option><option>Local business</option><option>Portfolio</option><option>Other</option>
+</select>
+<label for="details">Website requirements / वेबसाइट कैसी चाहिए?</label>
+<textarea id="details" required maxlength="1000" placeholder="Describe your idea"></textarea>
+<label for="budget">Budget / बजट</label>
+<select id="budget"><option>Need advice</option><option>Under ₹2,000</option><option>₹2,000–₹5,000</option><option>₹5,000+</option></select>
+<button class="btn" type="submit">Send Request on WhatsApp</button>
+<p class="muted">WhatsApp opens with your message for you to review.</p>
+</form>
+</section>
+</main>
+<footer><div class="logo">VELTRIX<span>.</span></div><p>Building your ideas for the web.</p><p lang="hi">आपके विचारों को ऑनलाइन पहचान देना।</p><p>© 2026 Veltrix</p></footer>
+<script>
+const WHATSAPP_NUMBER = "8421162592";
+document.getElementById("requestForm").addEventListener("submit",function(e){
+e.preventDefault();
+if(WHATSAPP_NUMBER.includes("X")){
+alert("Add your business WhatsApp number in the code first.");
+return;
+}
+const message="Hello Veltrix! I want a website.\nName: "+document.getElementById("name").value+"\nBusiness: "+document.getElementById("business").value+"\nDetails: "+document.getElementById("details").value+"\nBudget: "+document.getElementById("budget").value;
+window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message),"_blank");
+});
+</script>
+</body>
+</html>
