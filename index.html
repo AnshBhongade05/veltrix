@@ -3,69 +3,78 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#080b14">
 <title>VELTRIX | Digital Solutions</title>
 <style>
 :root{--bg:#080b14;--panel:#111827;--blue:#657cff;--cyan:#43e5ff;--text:#f5f7ff;--muted:#a5afc4}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;line-height:1.6}
 a{color:inherit;text-decoration:none}
-header{position:sticky;top:0;z-index:10;background:#080b14ed;backdrop-filter:blur(15px);border-bottom:1px solid #ffffff12}
-nav{max-width:1150px;margin:auto;padding:16px 22px;display:flex;justify-content:space-between;align-items:center;gap:15px}
-.logo{font-size:25px;font-weight:900;letter-spacing:3px}
-.logo span{color:var(--cyan)}
-.links{display:flex;align-items:center;gap:22px;font-size:14px}
-select{background:var(--panel);color:white;border:1px solid #ffffff30;padding:9px;border-radius:8px;max-width:130px}
-.btn{display:inline-block;background:linear-gradient(120deg,var(--blue),#8865ed);padding:12px 20px;border-radius:10px;font-weight:bold;border:0;color:white;cursor:pointer}
-.btn.secondary{background:transparent;border:1px solid #657cff}
-.hero{max-width:1150px;margin:auto;padding:100px 22px 85px;display:grid;grid-template-columns:1.3fr .7fr;gap:45px;align-items:center}
-.tag{color:var(--cyan);font-size:12px;letter-spacing:3px;font-weight:bold}
-h1{font-size:clamp(43px,7vw,76px);line-height:1.08;letter-spacing:-3px;margin:18px 0}
-.gradient{background:linear-gradient(90deg,#8ca0ff,var(--cyan));background-clip:text;-webkit-background-clip:text;color:transparent}
+header{position:sticky;top:0;z-index:20;background:#080b14ed;backdrop-filter:blur(15px);border-bottom:1px solid #ffffff15}
+nav{max-width:1150px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.logo{font-size:25px;font-weight:900;letter-spacing:3px;white-space:nowrap}
+.logo span,.gradient{color:var(--cyan)}
+.navlinks{display:flex;align-items:center;gap:18px}
+.navlinks a{font-size:13px;color:#dce3f5}
+.navlinks a:hover{color:var(--cyan)}
+button,.btn{border:0;border-radius:9px;padding:11px 17px;background:linear-gradient(120deg,var(--blue),#8865ed);color:white;font-weight:bold;cursor:pointer;display:inline-block}
+.secondary{background:transparent;border:1px solid #657cff}
+.menu-toggle{display:none;font-size:23px}
+select,input,textarea{background:var(--panel);color:white;border:1px solid #ffffff28;border-radius:8px;padding:11px;font:inherit;max-width:100%}
+.hero{max-width:1150px;margin:auto;padding:90px 22px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.tag{font-size:12px;letter-spacing:3px;color:var(--cyan);font-weight:bold}
+h1{font-size:clamp(44px,7vw,76px);line-height:1.08;letter-spacing:-3px;margin:18px 0}
+h2{font-size:35px;line-height:1.2}
 p{color:var(--muted)}
-.hero p{font-size:18px;max-width:600px}
-.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.visual{border:1px solid #657cff55;border-radius:25px;padding:28px;background:radial-gradient(ellipse at top right,#364c9b66,transparent 65%),var(--panel);min-height:300px;display:flex;flex-direction:column;justify-content:space-between}
-.visual h2{font-size:42px;margin:12px 0}
-.orb{font-size:65px;color:var(--cyan);text-align:center;text-shadow:0 0 35px #43e5ff70}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}
-.stat{padding:16px;background:#ffffff08;border:1px solid #ffffff12;border-radius:12px}
-.stat b{font-size:21px;display:block}
-.stat small{color:var(--muted)}
-section{max-width:1150px;margin:auto;padding:70px 22px}
+.hero p{font-size:18px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.visual{border:1px solid #657cff55;border-radius:22px;padding:28px;background:radial-gradient(ellipse at top right,#364c9b70,transparent 65%),var(--panel)}
+.orb{text-align:center;font-size:90px;color:var(--cyan);text-shadow:0 0 35px #43e5ff70}
+section{max-width:1150px;margin:auto;padding:65px 22px}
 .heading{text-align:center;margin-bottom:35px}
-.heading h2{font-size:36px;margin:8px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{padding:24px;border:1px solid #ffffff14;background:var(--panel);border-radius:17px;transition:.2s}
-.card:hover{border-color:#657cff;transform:translateY(-3px)}
-.symbol{font-size:29px}
-.card h3{margin:12px 0 5px}
-.price{font-size:27px;font-weight:bold;margin:14px 0}
-.price small{font-size:12px;color:var(--muted);font-weight:normal}
-ul{padding-left:20px;color:var(--muted)}
-li{margin:7px 0}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.step{padding:20px;border-left:2px solid var(--blue);background:#ffffff06}
-.contact{background:linear-gradient(130deg,#151c37,#0e1525);border:1px solid #ffffff18;border-radius:22px;padding:35px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{background:var(--panel);border:1px solid #ffffff15;border-radius:16px;padding:23px}
+.card:hover{border-color:var(--blue)}
+.symbol{font-size:30px;color:var(--cyan)}
+.price{font-size:28px;font-weight:bold}
+small,.muted{color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.step{padding:20px;border-left:2px solid var(--blue);background:#ffffff07}
+.contact{padding:30px;background:var(--panel);border:1px solid #ffffff18;border-radius:20px}
 form{display:grid;gap:13px}
-input,textarea{width:100%;padding:13px;background:#080b14;color:white;border:1px solid #ffffff25;border-radius:9px;font:inherit}
 textarea{min-height:110px;resize:vertical}
-footer{border-top:1px solid #ffffff15;text-align:center;padding:30px 20px;color:var(--muted)}
-footer a{color:var(--cyan);margin:0 8px}
-@media(max-width:750px){.hero{grid-template-columns:1fr;padding-top:65px}.grid,.steps{grid-template-columns:1fr}.links{gap:10px}.links .optional{display:none}.stats{gap:6px}.stat{padding:10px}h1{letter-spacing:-2px}}
+.portal{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+footer{padding:35px 20px;text-align:center;border-top:1px solid #ffffff15}
+footer a{color:var(--cyan);margin:0 7px}
+@media(max-width:850px){
+.menu-toggle{display:block}
+.navlinks{display:none;position:absolute;top:65px;left:0;right:0;background:#0c1120;padding:20px;flex-direction:column;align-items:stretch;border-bottom:1px solid #ffffff20}
+.navlinks.open{display:flex}
+.navlinks a{padding:8px}
+.hero{grid-template-columns:1fr;padding-top:55px}
+.grid{grid-template-columns:1fr}
+.steps{grid-template-columns:1fr}
+.portal{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
 <header>
 <nav>
-<a class="logo" href="#">VELTRI<span>X</span></a>
-<div class="links">
-<a href="#services" data-en="Services" data-hi="सेवाएँ" data-mr="सेवा">Services</a>
-<a href="#about" class="optional" data-en="About" data-hi="हमारे बारे में" data-mr="आमच्याबद्दल">About</a>
-<a href="#contact" data-en="Contact" data-hi="संपर्क" data-mr="संपर्क">Contact</a>
-<select id="language" aria-label="Choose language">
+<a class="logo" href="#home">VELTRI<span>X</span></a>
+<button class="menu-toggle secondary" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+<div class="navlinks" id="navlinks">
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#projects">Projects</a>
+<a href="#pricing">Pricing</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+<a href="#customer">Customer Portal</a>
+<a href="#admin">Admin</a>
+<select id="language" aria-label="Language">
 <option value="en">English</option>
 <option value="hi">हिन्दी</option>
 <option value="mr">मराठी</option>
@@ -91,55 +100,82 @@ footer a{color:var(--cyan);margin:0 8px}
 </header>
 
 <main>
-<div class="hero">
+<div class="hero" id="home">
 <div>
 <div class="tag">YOUR DIGITAL GROWTH PARTNER</div>
-<h1>Build your<br>future with<br><span class="gradient">VELTRIX.</span></h1>
-<p data-en="We help businesses build a powerful online presence with modern websites, digital experiences and creative solutions." data-hi="आधुनिक वेबसाइट और डिजिटल समाधानों से अपने व्यवसाय को आगे बढ़ाएँ।" data-mr="आधुनिक वेबसाइट आणि डिजिटल उपायांसह तुमचा व्यवसाय पुढे न्या.">We help businesses build a powerful online presence with modern websites, digital experiences and creative solutions.</p>
+<h1>Build your future with <span class="gradient">VELTRIX.</span></h1>
+<p>Modern websites, thoughtful design and digital solutions that help businesses move forward.</p>
 <div class="actions">
-<a class="btn" href="#contact" data-en="Start a Project ↗" data-hi="प्रोजेक्ट शुरू करें ↗" data-mr="प्रोजेक्ट सुरू करा ↗">Start a Project ↗</a>
-<a class="btn secondary" href="#services" data-en="Explore Services" data-hi="सेवाएँ देखें" data-mr="सेवा पहा">Explore Services</a>
-</div>
-<div class="stats">
-<div class="stat"><b>01</b><small>Creative ideas</small></div>
-<div class="stat"><b>02</b><small>Modern design</small></div>
-<div class="stat"><b>03</b><small>Digital growth</small></div>
+<a class="btn" href="#contact">Start a Project ↗</a>
+<a class="btn secondary" href="#services">Explore Services</a>
 </div>
 </div>
 <div class="visual">
-<div><div class="tag">DIGITAL / INNOVATION</div><h2>Think bigger.<br><span class="gradient">Build smarter.</span></h2><p>Ideas into digital reality.</p></div>
+<div class="tag">DESIGN · DEVELOPMENT · INNOVATION</div>
+<h2>Think bigger.<br><span class="gradient">Build smarter.</span></h2>
 <div class="orb">✳</div>
-<div class="tag">DESIGN · DEVELOPMENT · GROWTH</div>
+<p>Turning ideas into digital experiences.</p>
 </div>
 </div>
 
 <section id="services">
-<div class="heading"><div class="tag">WHAT WE DO</div><h2>Our Services</h2><p>Everything you need to grow online.</p></div>
+<div class="heading"><div class="tag">WHAT WE DO</div><h2>Our Services</h2><p>Digital solutions for your next big idea.</p></div>
 <div class="grid">
-<article class="card"><div class="symbol">⌘</div><h3>Website Development</h3><p>Modern, responsive websites tailored to your brand and business goals.</p><a class="gradient" href="#contact">Discuss a project ↗</a></article>
-<article class="card"><div class="symbol">✧</div><h3>UI/UX Design</h3><p>Clean interfaces and thoughtful user experiences for digital products.</p><a class="gradient" href="#contact">Discuss a project ↗</a></article>
-<article class="card"><div class="symbol">↗</div><h3>Digital Solutions</h3><p>Creative digital experiences, business tools and online brand support.</p><a class="gradient" href="#contact">Discuss a project ↗</a></article>
+<article class="card"><div class="symbol">⌘</div><h3>Website Development</h3><p>Responsive business websites and landing pages.</p><a class="gradient" href="#contact">Enquire ↗</a></article>
+<article class="card"><div class="symbol">✧</div><h3>UI/UX Design</h3><p>Modern interfaces and intuitive user experiences.</p><a class="gradient" href="#contact">Enquire ↗</a></article>
+<article class="card"><div class="symbol">↗</div><h3>Digital Solutions</h3><p>Custom digital experiences for your business needs.</p><a class="gradient" href="#contact">Enquire ↗</a></article>
+</div>
+</section>
+
+<section id="projects">
+<div class="heading"><div class="tag">OUR WORK</div><h2>Projects & Portfolio</h2><p>Explore the kinds of projects we can create.</p></div>
+<div class="grid">
+<div class="card"><div class="symbol">01</div><h3>Business Websites</h3><p>Professional websites for brands and local businesses.</p></div>
+<div class="card"><div class="symbol">02</div><h3>Online Platforms</h3><p>Dashboards and digital workflows built around requirements.</p></div>
+<div class="card"><div class="symbol">03</div><h3>Creative Experiences</h3><p>Distinctive layouts and modern visual identities.</p></div>
+</div>
+</section>
+
+<section id="pricing">
+<div class="heading"><div class="tag">CLEAR & FLEXIBLE</div><h2>Project Pricing</h2><p>Final quotations depend on scope and requirements.</p></div>
+<div class="grid">
+<div class="card"><h3>Starter</h3><div class="price">Custom</div><p>For simple websites and landing pages.</p><ul><li>Responsive design</li><li>Essential pages</li><li>Contact enquiry</li></ul><a class="btn" href="#contact">Request Quote</a></div>
+<div class="card"><h3>Business</h3><div class="price">Custom</div><p>For growing businesses.</p><ul><li>Custom page design</li><li>Service presentation</li><li>Project consultation</li></ul><a class="btn" href="#contact">Request Quote</a></div>
+<div class="card"><h3>Advanced</h3><div class="price">Custom</div><p>For tailored platforms and workflows.</p><ul><li>Advanced requirements</li><li>Backend planning</li><li>Integration consultation</li></ul><a class="btn" href="#contact">Request Quote</a></div>
 </div>
 </section>
 
 <section id="about">
-<div class="heading"><div class="tag">WHY VELTRIX</div><h2>Built for what's next.</h2><p>Our approach combines creativity, technology and a focus on your goals.</p></div>
+<div class="heading"><div class="tag">OUR APPROACH</div><h2>Built around your vision.</h2><p>From your first idea to a carefully planned launch.</p></div>
 <div class="steps">
-<div class="step"><h3>01. Discover</h3><p>Understand your idea, audience and requirements.</p></div>
-<div class="step"><h3>02. Create</h3><p>Plan and build a digital experience for your needs.</p></div>
-<div class="step"><h3>03. Launch</h3><p>Test, refine and prepare your project for launch.</p></div>
+<div class="step"><h3>01. Discover</h3><p>Understand your goals and requirements.</p></div>
+<div class="step"><h3>02. Create</h3><p>Design and develop the proposed solution.</p></div>
+<div class="step"><h3>03. Launch</h3><p>Test and prepare your project for deployment.</p></div>
 </div>
+</section>
+
+<section id="customer">
+<div class="heading"><div class="tag">CUSTOMER AREA</div><h2>Customer Portal</h2><p>Secure sign-in and registration require backend setup.</p></div>
+<div class="portal">
+<div class="card"><h3>Customer Login</h3><p>Access your projects, quotations and messages after the secure portal is configured.</p><a class="btn" href="#contact">Contact Us to Get Started</a></div>
+<div class="card"><h3>New Customer</h3><p>Tell us about your project to begin the onboarding process.</p><a class="btn secondary" href="#contact">Start an Enquiry</a></div>
+</div>
+</section>
+
+<section id="admin">
+<div class="heading"><div class="tag">STAFF ACCESS</div><h2>Admin Workspace</h2><p>Admin tools must be hosted behind server-side authentication. This public page does not grant admin access.</p></div>
+<div class="card"><h3>Platform Management</h3><p>Planned modules: customer management, projects, quotations, invoices, payments, messages and analytics.</p><p class="muted">Admin dashboard activation requires the secure backend.</p></div>
 </section>
 
 <section id="contact">
 <div class="contact">
 <div class="tag">LET'S WORK TOGETHER</div>
-<h2>Have a project in mind?</h2>
-<p>Tell us what you need. We'll help you take the next step.</p>
+<h2>Tell us about your project.</h2>
+<p>Submit your details to prepare an enquiry in WhatsApp.</p>
 <form id="enquiry">
 <input id="name" placeholder="Your name" required>
 <input id="email" type="email" placeholder="Your email address" required>
-<select id="service" aria-label="Select a service" required>
+<select id="service" required>
 <option value="">Choose a service</option>
 <option>Website Development</option>
 <option>UI/UX Design</option>
@@ -147,7 +183,7 @@ footer a{color:var(--cyan);margin:0 8px}
 <option>Other</option>
 </select>
 <textarea id="message" placeholder="Describe your project..." required></textarea>
-<button class="btn" type="submit">Send Enquiry via WhatsApp ↗</button>
+<button type="submit">Prepare WhatsApp Enquiry ↗</button>
 </form>
 <p id="status" role="status"></p>
 </div>
@@ -155,36 +191,60 @@ footer a{color:var(--cyan);margin:0 8px}
 </main>
 
 <footer>
-<div class="logo">VELTRI<span class="gradient">X</span></div>
+<div class="logo">VELTRI<span>X</span></div>
 <p>Modern digital solutions. Built around your vision.</p>
-<p><a href="mailto:veltrix.official@gmail.com">Email</a> · <a href="https://instagram.com/veltrix.digital" target="_blank" rel="noopener">Instagram</a> · <a href="tel:+919545430113">Call Us</a></p>
+<p><a href="mailto:veltrix.official@gmail.com">Email</a>
+<a href="https://instagram.com/veltrix.digital" target="_blank" rel="noopener">Instagram</a>
+<a href="tel:+919545430113">Call</a></p>
 <p>© <span id="year"></span> VELTRIX. All rights reserved.</p>
 </footer>
 
 <script>
+const toggle=document.getElementById("menuToggle");
+const nav=document.getElementById("navlinks");
+toggle.addEventListener("click",()=>{
+ const open=nav.classList.toggle("open");
+ toggle.setAttribute("aria-expanded",String(open));
+ toggle.textContent=open?"✕":"☰";
+});
+nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
+ nav.classList.remove("open");
+ toggle.textContent="☰";
+ toggle.setAttribute("aria-expanded","false");
+}));
 document.getElementById("year").textContent=new Date().getFullYear();
 
-const language=document.getElementById("language");
-language.addEventListener("change",()=>{
- const lang=language.value;
- document.querySelectorAll("[data-"+lang+"]").forEach(el=>{
-  el.textContent=el.getAttribute("data-"+lang);
+const translations={
+hi:{
+"Home":"होम","Services":"सेवाएँ","Projects":"प्रोजेक्ट","Pricing":"मूल्य","About":"हमारे बारे में","Contact":"संपर्क","Customer Portal":"ग्राहक पोर्टल","Admin":"एडमिन",
+"OUR DIGITAL GROWTH PARTNER":"आपका डिजिटल विकास साथी"
+},
+mr:{
+"Home":"मुख्यपृष्ठ","Services":"सेवा","Projects":"प्रकल्प","Pricing":"किंमत","About":"आमच्याबद्दल","Contact":"संपर्क","Customer Portal":"ग्राहक पोर्टल","Admin":"अॅडमिन"
+}
+};
+document.getElementById("language").addEventListener("change",e=>{
+ const lang=e.target.value;
+ if(lang==="en"){location.reload();return;}
+ const map=translations[lang];
+ if(!map)return;
+ document.querySelectorAll("#navlinks a").forEach(a=>{
+  const original=a.dataset.original||a.textContent;
+  a.dataset.original=original;
+  if(map[original])a.textContent=map[original];
  });
- document.documentElement.lang=lang;
 });
 
-document.getElementById("enquiry").addEventListener("submit",function(e){
+document.getElementById("enquiry").addEventListener("submit",e=>{
  e.preventDefault();
- const name=document.getElementById("name").value.trim();
- const email=document.getElementById("email").value.trim();
- const service=document.getElementById("service").value;
- const message=document.getElementById("message").value.trim();
- const text="VELTRIX PROJECT ENQUIRY\nName: "+name+
- "\nEmail: "+email+"\nService: "+service+"\nProject: "+message;
+ const val=id=>document.getElementById(id).value.trim();
+ const text="VELTRIX PROJECT ENQUIRY\nName: "+val("name")+
+ "\nEmail: "+val("email")+"\nService: "+val("service")+
+ "\nProject: "+val("message");
  const url="https://wa.me/919545430113?text="+encodeURIComponent(text);
- window.open(url,"_blank","noopener,noreferrer");
  document.getElementById("status").textContent=
- "Your enquiry is prepared. Send it in the WhatsApp window that opens.";
+ "Opening WhatsApp. Review your enquiry and press Send there.";
+ window.open(url,"_blank");
 });
 </script>
 </body>
