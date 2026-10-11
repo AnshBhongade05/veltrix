@@ -1,89 +1,190 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Veltrix | Website Development</title>
+<meta name="theme-color" content="#080b14">
+<title>VELTRIX | Digital Solutions</title>
 <style>
+:root{--bg:#080b14;--panel:#111827;--blue:#657cff;--cyan:#43e5ff;--text:#f5f7ff;--muted:#a5afc4}
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#17233c}
-header{background:#101b31;color:white;padding:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
-.logo{font-size:24px;font-weight:bold}.logo span{color:#50dfc5}
-nav a{color:white;text-decoration:none;margin-left:12px}
-.hero{background:linear-gradient(135deg,#101b31,#244b79);color:white;text-align:center;padding:65px 20px}
-.hero h1{font-size:38px;line-height:1.2}
-.hero p{color:#e1eafa;line-height:1.7}
-.btn{display:inline-block;background:#50dfc5;color:#101b31;text-decoration:none;font-weight:bold;padding:13px 20px;border:0;border-radius:7px;cursor:pointer}
-section{padding:45px 20px}
-.heading{text-align:center;margin-bottom:25px}
-.grid{display:grid;grid-template-columns:1fr;gap:15px;max-width:850px;margin:auto}
-.card{background:white;padding:22px;border-radius:12px;border:1px solid #e3e8f0}
-.muted{color:#58677e}
-#contact{background:#eaf0f8}
-form{background:white;padding:22px;border-radius:12px;max-width:550px;margin:auto}
-label{display:block;margin:14px 0 5px;font-weight:bold}
-input,select,textarea{width:100%;padding:12px;border:1px solid #ccd4e0;border-radius:6px;font:inherit}
-textarea{min-height:90px}
-form button{width:100%;margin-top:18px}
-footer{background:#101b31;color:white;text-align:center;padding:25px}
-@media(min-width:600px){.grid{grid-template-columns:repeat(3,1fr)}}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:10;background:#080b14ed;backdrop-filter:blur(15px);border-bottom:1px solid #ffffff12}
+nav{max-width:1150px;margin:auto;padding:16px 22px;display:flex;justify-content:space-between;align-items:center;gap:15px}
+.logo{font-size:25px;font-weight:900;letter-spacing:3px}
+.logo span{color:var(--cyan)}
+.links{display:flex;align-items:center;gap:22px;font-size:14px}
+select{background:var(--panel);color:white;border:1px solid #ffffff30;padding:9px;border-radius:8px;max-width:130px}
+.btn{display:inline-block;background:linear-gradient(120deg,var(--blue),#8865ed);padding:12px 20px;border-radius:10px;font-weight:bold;border:0;color:white;cursor:pointer}
+.btn.secondary{background:transparent;border:1px solid #657cff}
+.hero{max-width:1150px;margin:auto;padding:100px 22px 85px;display:grid;grid-template-columns:1.3fr .7fr;gap:45px;align-items:center}
+.tag{color:var(--cyan);font-size:12px;letter-spacing:3px;font-weight:bold}
+h1{font-size:clamp(43px,7vw,76px);line-height:1.08;letter-spacing:-3px;margin:18px 0}
+.gradient{background:linear-gradient(90deg,#8ca0ff,var(--cyan));background-clip:text;-webkit-background-clip:text;color:transparent}
+p{color:var(--muted)}
+.hero p{font-size:18px;max-width:600px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.visual{border:1px solid #657cff55;border-radius:25px;padding:28px;background:radial-gradient(ellipse at top right,#364c9b66,transparent 65%),var(--panel);min-height:300px;display:flex;flex-direction:column;justify-content:space-between}
+.visual h2{font-size:42px;margin:12px 0}
+.orb{font-size:65px;color:var(--cyan);text-align:center;text-shadow:0 0 35px #43e5ff70}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}
+.stat{padding:16px;background:#ffffff08;border:1px solid #ffffff12;border-radius:12px}
+.stat b{font-size:21px;display:block}
+.stat small{color:var(--muted)}
+section{max-width:1150px;margin:auto;padding:70px 22px}
+.heading{text-align:center;margin-bottom:35px}
+.heading h2{font-size:36px;margin:8px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{padding:24px;border:1px solid #ffffff14;background:var(--panel);border-radius:17px;transition:.2s}
+.card:hover{border-color:#657cff;transform:translateY(-3px)}
+.symbol{font-size:29px}
+.card h3{margin:12px 0 5px}
+.price{font-size:27px;font-weight:bold;margin:14px 0}
+.price small{font-size:12px;color:var(--muted);font-weight:normal}
+ul{padding-left:20px;color:var(--muted)}
+li{margin:7px 0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.step{padding:20px;border-left:2px solid var(--blue);background:#ffffff06}
+.contact{background:linear-gradient(130deg,#151c37,#0e1525);border:1px solid #ffffff18;border-radius:22px;padding:35px}
+form{display:grid;gap:13px}
+input,textarea{width:100%;padding:13px;background:#080b14;color:white;border:1px solid #ffffff25;border-radius:9px;font:inherit}
+textarea{min-height:110px;resize:vertical}
+footer{border-top:1px solid #ffffff15;text-align:center;padding:30px 20px;color:var(--muted)}
+footer a{color:var(--cyan);margin:0 8px}
+@media(max-width:750px){.hero{grid-template-columns:1fr;padding-top:65px}.grid,.steps{grid-template-columns:1fr}.links{gap:10px}.links .optional{display:none}.stats{gap:6px}.stat{padding:10px}h1{letter-spacing:-2px}}
 </style>
 </head>
 <body>
 <header>
-<div class="logo">VELTRIX<span>.</span></div>
-<nav><a href="#services">Services</a><a href="#contact">Contact</a></nav>
+<nav>
+<a class="logo" href="#">VELTRI<span>X</span></a>
+<div class="links">
+<a href="#services" data-en="Services" data-hi="सेवाएँ" data-mr="सेवा">Services</a>
+<a href="#about" class="optional" data-en="About" data-hi="हमारे बारे में" data-mr="आमच्याबद्दल">About</a>
+<a href="#contact" data-en="Contact" data-hi="संपर्क" data-mr="संपर्क">Contact</a>
+<select id="language" aria-label="Choose language">
+<option value="en">English</option>
+<option value="hi">हिन्दी</option>
+<option value="mr">मराठी</option>
+<option value="fr">Français</option>
+<option value="es">Español</option>
+<option value="de">Deutsch</option>
+<option value="it">Italiano</option>
+<option value="pt">Português</option>
+<option value="ar">العربية</option>
+<option value="bn">বাংলা</option>
+<option value="ta">தமிழ்</option>
+<option value="te">తెలుగు</option>
+<option value="gu">ગુજરાતી</option>
+<option value="pa">ਪੰਜਾਬੀ</option>
+<option value="ur">اردو</option>
+<option value="ja">日本語</option>
+<option value="ko">한국어</option>
+<option value="zh">中文</option>
+<option value="ru">Русский</option>
+</select>
+</div>
+</nav>
 </header>
+
 <main>
 <div class="hero">
-<p>YOUR IDEAS, ONLINE</p>
-<h1>Websites That Help<br>Businesses Grow.</h1>
-<p>Professional websites for shops, cafes and growing businesses.</p>
-<p lang="hi">आपके व्यवसाय के लिए आधुनिक वेबसाइट।</p>
-<a class="btn" href="#contact">Request a Website</a>
+<div>
+<div class="tag">YOUR DIGITAL GROWTH PARTNER</div>
+<h1>Build your<br>future with<br><span class="gradient">VELTRIX.</span></h1>
+<p data-en="We help businesses build a powerful online presence with modern websites, digital experiences and creative solutions." data-hi="आधुनिक वेबसाइट और डिजिटल समाधानों से अपने व्यवसाय को आगे बढ़ाएँ।" data-mr="आधुनिक वेबसाइट आणि डिजिटल उपायांसह तुमचा व्यवसाय पुढे न्या.">We help businesses build a powerful online presence with modern websites, digital experiences and creative solutions.</p>
+<div class="actions">
+<a class="btn" href="#contact" data-en="Start a Project ↗" data-hi="प्रोजेक्ट शुरू करें ↗" data-mr="प्रोजेक्ट सुरू करा ↗">Start a Project ↗</a>
+<a class="btn secondary" href="#services" data-en="Explore Services" data-hi="सेवाएँ देखें" data-mr="सेवा पहा">Explore Services</a>
 </div>
+<div class="stats">
+<div class="stat"><b>01</b><small>Creative ideas</small></div>
+<div class="stat"><b>02</b><small>Modern design</small></div>
+<div class="stat"><b>03</b><small>Digital growth</small></div>
+</div>
+</div>
+<div class="visual">
+<div><div class="tag">DIGITAL / INNOVATION</div><h2>Think bigger.<br><span class="gradient">Build smarter.</span></h2><p>Ideas into digital reality.</p></div>
+<div class="orb">✳</div>
+<div class="tag">DESIGN · DEVELOPMENT · GROWTH</div>
+</div>
+</div>
+
 <section id="services">
-<div class="heading"><h2>Our Services</h2><p lang="hi">हमारी सेवाएँ</p></div>
+<div class="heading"><div class="tag">WHAT WE DO</div><h2>Our Services</h2><p>Everything you need to grow online.</p></div>
 <div class="grid">
-<div class="card"><h3>🏢 Business Websites</h3><p class="muted">Build your professional online presence.</p></div>
-<div class="card"><h3>☕ Cafe Websites</h3><p class="muted">Show your menu and contact details.</p></div>
-<div class="card"><h3>🛍️ Shop Websites</h3><p class="muted">Display products and attract customers.</p></div>
+<article class="card"><div class="symbol">⌘</div><h3>Website Development</h3><p>Modern, responsive websites tailored to your brand and business goals.</p><a class="gradient" href="#contact">Discuss a project ↗</a></article>
+<article class="card"><div class="symbol">✧</div><h3>UI/UX Design</h3><p>Clean interfaces and thoughtful user experiences for digital products.</p><a class="gradient" href="#contact">Discuss a project ↗</a></article>
+<article class="card"><div class="symbol">↗</div><h3>Digital Solutions</h3><p>Creative digital experiences, business tools and online brand support.</p><a class="gradient" href="#contact">Discuss a project ↗</a></article>
 </div>
 </section>
-<section>
-<div class="heading"><h2>About Veltrix</h2><p lang="hi">वेल्ट्रिक्स के बारे में</p></div>
-<div class="card"><p>Veltrix creates attractive, mobile-friendly websites for businesses.</p><p lang="hi">Veltrix व्यवसायों के लिए आकर्षक वेबसाइट बनाता है।</p></div>
+
+<section id="about">
+<div class="heading"><div class="tag">WHY VELTRIX</div><h2>Built for what's next.</h2><p>Our approach combines creativity, technology and a focus on your goals.</p></div>
+<div class="steps">
+<div class="step"><h3>01. Discover</h3><p>Understand your idea, audience and requirements.</p></div>
+<div class="step"><h3>02. Create</h3><p>Plan and build a digital experience for your needs.</p></div>
+<div class="step"><h3>03. Launch</h3><p>Test, refine and prepare your project for launch.</p></div>
+</div>
 </section>
+
 <section id="contact">
-<div class="heading"><h2>Request Your Website</h2><p lang="hi">अपनी वेबसाइट के लिए अनुरोध करें</p></div>
-<form id="requestForm">
-<label for="name">Your name / आपका नाम</label>
-<input id="name" required maxlength="80" placeholder="Your name">
-<label for="business">Business type / व्यवसाय</label>
-<select id="business" required>
-<option value="">Choose one</option>
-<option>Cafe or restaurant</option><option>Shop</option><option>Local business</option><option>Portfolio</option><option>Other</option>
+<div class="contact">
+<div class="tag">LET'S WORK TOGETHER</div>
+<h2>Have a project in mind?</h2>
+<p>Tell us what you need. We'll help you take the next step.</p>
+<form id="enquiry">
+<input id="name" placeholder="Your name" required>
+<input id="email" type="email" placeholder="Your email address" required>
+<select id="service" aria-label="Select a service" required>
+<option value="">Choose a service</option>
+<option>Website Development</option>
+<option>UI/UX Design</option>
+<option>Digital Solutions</option>
+<option>Other</option>
 </select>
-<label for="details">Website requirements / वेबसाइट कैसी चाहिए?</label>
-<textarea id="details" required maxlength="1000" placeholder="Describe your idea"></textarea>
-<label for="budget">Budget / बजट</label>
-<select id="budget"><option>Need advice</option><option>Under ₹2,000</option><option>₹2,000–₹5,000</option><option>₹5,000+</option></select>
-<button class="btn" type="submit">Send Request on WhatsApp</button>
-<p class="muted">WhatsApp opens with your message for you to review.</p>
+<textarea id="message" placeholder="Describe your project..." required></textarea>
+<button class="btn" type="submit">Send Enquiry via WhatsApp ↗</button>
 </form>
+<p id="status" role="status"></p>
+</div>
 </section>
 </main>
-<footer><div class="logo">VELTRIX<span>.</span></div><p>Building your ideas for the web.</p><p lang="hi">आपके विचारों को ऑनलाइन पहचान देना।</p><p>© 2026 Veltrix</p></footer>
+
+<footer>
+<div class="logo">VELTRI<span class="gradient">X</span></div>
+<p>Modern digital solutions. Built around your vision.</p>
+<p><a href="mailto:veltrix.official@gmail.com">Email</a> · <a href="https://instagram.com/veltrix.digital" target="_blank" rel="noopener">Instagram</a> · <a href="tel:+919545430113">Call Us</a></p>
+<p>© <span id="year"></span> VELTRIX. All rights reserved.</p>
+</footer>
+
 <script>
-const WHATSAPP_NUMBER = "8421162592";
-document.getElementById("requestForm").addEventListener("submit",function(e){
-e.preventDefault();
-if(WHATSAPP_NUMBER.includes("X")){
-alert("Add your business WhatsApp number in the code first.");
-return;
-}
-const message="Hello Veltrix! I want a website.\nName: "+document.getElementById("name").value+"\nBusiness: "+document.getElementById("business").value+"\nDetails: "+document.getElementById("details").value+"\nBudget: "+document.getElementById("budget").value;
-window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message),"_blank");
+document.getElementById("year").textContent=new Date().getFullYear();
+
+const language=document.getElementById("language");
+language.addEventListener("change",()=>{
+ const lang=language.value;
+ document.querySelectorAll("[data-"+lang+"]").forEach(el=>{
+  el.textContent=el.getAttribute("data-"+lang);
+ });
+ document.documentElement.lang=lang;
+});
+
+document.getElementById("enquiry").addEventListener("submit",function(e){
+ e.preventDefault();
+ const name=document.getElementById("name").value.trim();
+ const email=document.getElementById("email").value.trim();
+ const service=document.getElementById("service").value;
+ const message=document.getElementById("message").value.trim();
+ const text="VELTRIX PROJECT ENQUIRY\nName: "+name+
+ "\nEmail: "+email+"\nService: "+service+"\nProject: "+message;
+ const url="https://wa.me/919545430113?text="+encodeURIComponent(text);
+ window.open(url,"_blank","noopener,noreferrer");
+ document.getElementById("status").textContent=
+ "Your enquiry is prepared. Send it in the WhatsApp window that opens.";
 });
 </script>
 </body>
